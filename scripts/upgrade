@@ -8,11 +8,11 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# SYNC SOURCE
+# DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression "Syncing updated Solisite source files..."
+ynh_script_progression "Upgrading source files..."
 
-sync_app_source
+ynh_setup_source --dest_dir="$install_dir" --keep=".env"
 
 #=================================================
 # REAPPLY CONFIGURATION

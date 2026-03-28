@@ -13,7 +13,7 @@ source /usr/share/yunohost/helpers
 ynh_script_progression "Restoring source files, data, and configuration..."
 
 ynh_nodejs_install
-sync_app_source
+ynh_setup_source --dest_dir="$install_dir"
 ynh_restore "$install_dir/.env"
 ynh_restore "$data_dir"
 prepare_mutable_paths
