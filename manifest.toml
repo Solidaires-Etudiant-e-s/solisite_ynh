@@ -53,6 +53,6 @@ ram.runtime = "512M"
     version = "22"
 
     [resources.sources.main]
-    url = "https://github.com/Solidaires-Etudiant-e-s/solisite/archive/refs/tags/v0.tar.gz"
-    sha256 = "a09188a52d46a8ead746f88f8f8feb96c1d1bfb7ebab57a009a4c6f0207f42e3"
+    url = "https://github.com/Solidaires-Etudiant-e-s/solisite/archive/refs/tags/v0.1.tar.gz"
+    sha256 = "a3e5a152fe78d5c0fecbcb6908001bc03e286488ef065b8822f9a14fd3d38a31"
     autoupdate.strategy = "latest_github_tag"
