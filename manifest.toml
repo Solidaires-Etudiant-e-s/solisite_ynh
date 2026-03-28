@@ -4,7 +4,7 @@ name = "Solisite"
 description.en = "Nuxt 4 website and lightweight CMS for Solidaires Etudiant-e-s, with Prisma-backed SQLite storage"
 description.fr = "Site web Nuxt 4 et CMS léger pour Solidaires Étudiant-e-s, avec stockage SQLite piloté par Prisma"
 
-version = "0.1~ynh1"
+version = "0.1~ynh2"
 
 maintainers = ["ebanDev"]
 
@@ -44,7 +44,7 @@ ram.runtime = "512M"
     main.allowed = "visitors"
 
     admin.url = "/admin"
-    admin.show_tile = false
+    admin.show_tile = true
     admin.allowed = "all_users"
 
     [resources.ports]
