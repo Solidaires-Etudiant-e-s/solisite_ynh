@@ -1,0 +1,1 @@
+Solisite is the Nuxt 4 website and lightweight CMS for Solidaires Étudiant-e-s. Public visitors can browse pages, articles, and syndicat profiles, while logged-in YunoHost users in the right LDAP groups can edit content through the `/admin` interface. Content is stored in a local SQLite database and managed through Prisma.

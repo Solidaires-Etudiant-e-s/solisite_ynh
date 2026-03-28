@@ -1,0 +1,58 @@
+packaging_format = 2
+id = "solisite"
+name = "Solisite"
+description.en = "Nuxt 4 website and lightweight CMS for Solidaires Etudiant-e-s, with Prisma-backed SQLite storage"
+description.fr = "Site web Nuxt 4 et CMS léger pour Solidaires Étudiant-e-s, avec stockage SQLite piloté par Prisma"
+
+version = "0.1~ynh1"
+
+maintainers = ["ebanDev"]
+
+[upstream]
+license = "AGPL-3.0"
+code = "https://github.com/Solidaires-Etudiant-e-s/solisite"
+
+[integration]
+yunohost = ">= 11.1"
+helpers_version = "2.1"
+architectures = "all"
+multi_instance = false
+ldap = true
+sso = true
+disk = "500M"
+ram.build = "1G"
+ram.runtime = "512M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+[resources]
+    [resources.system_user]
+
+    [resources.install_dir]
+    group = "www-data:r-x"
+
+    [resources.data_dir]
+
+    [resources.permissions]
+    main.url = "/"
+    main.allowed = "visitors"
+
+    admin.url = "/admin"
+    admin.show_tile = false
+    admin.allowed = "all_users"
+
+    [resources.ports]
+
+    [resources.nodejs]
+    version = "22"
+
+    [resources.sources.main]
+    url = "https://github.com/Solidaires-Etudiant-e-s/solisite/archive/refs/tags/v0.tar.gz"
+    sha256 = "a09188a52d46a8ead746f88f8f8feb96c1d1bfb7ebab57a009a4c6f0207f42e3"
+    autoupdate.strategy = "latest_github_tag"

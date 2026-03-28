@@ -1,0 +1,60 @@
+#!/bin/bash
+
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
+source _common.sh
+source /usr/share/yunohost/helpers
+
+#=================================================
+# DOWNLOAD / SYNC SOURCE
+#=================================================
+ynh_script_progression "Syncing Solisite source files..."
+
+sync_app_source
+
+#=================================================
+# INITIAL CONFIGURATION
+#=================================================
+ynh_script_progression "Preparing writable directories and environment..."
+
+mkdir -p "$data_dir"
+prepare_mutable_paths
+fix_app_permissions
+ynh_config_add --template=".env" --destination="$install_dir/.env"
+
+#=================================================
+# SYSTEM CONFIGURATION
+#=================================================
+ynh_script_progression "Adding system configurations related to $app..."
+
+ynh_nodejs_install
+ynh_config_add_nginx
+
+#=================================================
+# BUILD APPLICATION
+#=================================================
+ynh_script_progression "Installing dependencies, syncing SQLite schema, and building $app..."
+
+pushd "$install_dir"
+  ynh_hide_warnings ynh_exec_as_app npm ci
+  ynh_hide_warnings ynh_exec_as_app npm run db:sync
+  ynh_hide_warnings ynh_exec_as_app npm run build
+popd
+
+fix_app_permissions
+
+#=================================================
+# SERVICE SETUP
+#=================================================
+ynh_script_progression "Setting up the service for $app..."
+
+ynh_config_add_systemd
+ynh_systemctl
+
+#=================================================
+# END OF SCRIPT
+#=================================================
+
+ynh_script_progression "Installation of $app completed"

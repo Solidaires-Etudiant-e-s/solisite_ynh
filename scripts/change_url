@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
+source _common.sh
+source /usr/share/yunohost/helpers
+
+#=================================================
+# UPDATE NGINX CONF
+#=================================================
+ynh_script_progression "Updating nginx configuration for the new URL..."
+
+ynh_config_add_nginx
+ynh_systemctl --service=nginx --action=reload
+
+#=================================================
+# END OF SCRIPT
+#=================================================
+
+ynh_script_progression "Change of URL completed for $app"
