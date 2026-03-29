@@ -50,7 +50,7 @@ ram.runtime = "512M"
     [resources.ports]
 
     [resources.nodejs]
-    version = "22"
+    version = "24"
 
     [resources.sources.main]
     url = "https://github.com/Solidaires-Etudiant-e-s/solisite/archive/refs/tags/v0.5.tar.gz"
