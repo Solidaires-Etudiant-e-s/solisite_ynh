@@ -45,7 +45,7 @@ ram.runtime = "512M"
 
     admin.url = "/admin"
     admin.show_tile = true
-    admin.allowed = "all_users"
+    admin.allowed = ["admins", "commissions"]
 
     [resources.ports]
 
@@ -53,6 +53,6 @@ ram.runtime = "512M"
     version = "22"
 
     [resources.sources.main]
-    url = "https://github.com/Solidaires-Etudiant-e-s/solisite/archive/refs/tags/v0.2.tar.gz"
-    sha256 = "d6fa9377f6fdac3d9d2df49a68dcdc3ba63e8ea06621aaad22e9accf199270da"
+    url = "https://github.com/Solidaires-Etudiant-e-s/solisite/archive/refs/tags/v0.3.tar.gz"
+    sha256 = "b76af0f81986bb86197c6a9a666b7d1ffebcb1983c03f99bee50c1ffc24e69b7"
     autoupdate.strategy = "latest_github_tag"
