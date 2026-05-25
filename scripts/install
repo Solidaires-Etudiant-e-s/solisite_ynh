@@ -35,7 +35,7 @@ ynh_config_add_nginx
 #=================================================
 # BUILD APPLICATION
 #=================================================
-ynh_script_progression "Installing dependencies, syncing SQLite schema, and building $app..."
+ynh_script_progression "Installing dependencies, syncing MySQL schema, and building $app..."
 
 pushd "$install_dir"
   ynh_hide_warnings ynh_exec_as_app npm ci

@@ -20,6 +20,13 @@ prepare_mutable_paths
 fix_app_permissions
 
 #=================================================
+# RESTORE THE MYSQL DATABASE
+#=================================================
+ynh_script_progression "Restoring the MySQL database..."
+
+ynh_mysql_db_shell < ./db.sql
+
+#=================================================
 # RECREATE SYSTEM CONFIGURATION
 #=================================================
 ynh_script_progression "Recreating nginx and systemd configuration..."
@@ -30,7 +37,7 @@ ynh_config_add_systemd
 #=================================================
 # REBUILD APPLICATION
 #=================================================
-ynh_script_progression "Reinstalling dependencies, syncing SQLite schema, and rebuilding $app..."
+ynh_script_progression "Reinstalling dependencies, syncing MySQL schema, and rebuilding $app..."
 
 pushd "$install_dir"
   ynh_hide_warnings ynh_exec_as_app npm ci
