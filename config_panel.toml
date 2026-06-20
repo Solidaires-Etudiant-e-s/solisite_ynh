@@ -1,0 +1,10 @@
+version = "1.0"
+
+[main]
+
+[main.UMANI]
+
+	[main.UMANI.umani_id]
+	ask.fr = "Umani id"
+	type = "string"
+	example = "my-w3b517e-id"
