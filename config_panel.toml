@@ -7,5 +7,6 @@ version = "1.0"
 	[main.UMANI.umani_id]
 	ask.fr = "Umani id"
 	type = "string"
+	bind = ":__INSTALL_DIR__/.env"
 	example = "my-w3b517e-id"
 	default = "my-w3b517e-id"
