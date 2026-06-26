@@ -4,7 +4,7 @@ name = "Solisite"
 description.en = "Nuxt 4 website and lightweight CMS for Solidaires Etudiant-e-s, with Prisma-backed MySQL storage"
 description.fr = "Site web Nuxt 4 et CMS léger pour Solidaires Étudiant-e-s, avec stockage MySQL piloté par Prisma"
 
-version = "1.5.4~ynh4"
+version = "1.5.5~ynh1"
 
 maintainers = ["ebanDev", "ArmelClo"]
 
@@ -59,6 +59,6 @@ ram.runtime = "512M"
     version = "24"
 
     [resources.sources.main]
-    url = "https://github.com/Solidaires-Etudiant-e-s/solisite/archive/refs/tags/v1.5.4.tar.gz"
-    sha256 = "235d4ad67f95913b48b2f31c4856133f2d02d617d6d43c68d35dec1d806360f4"
+    url = "https://github.com/Solidaires-Etudiant-e-s/solisite/archive/refs/tags/v1.5.5.tar.gz"
+    sha256 = "35d1de36b22e702c16916550a0edc0e71a2a2161269a87796c2bc0c5ee1f5612"
     autoupdate.strategy = "latest_github_tag"
